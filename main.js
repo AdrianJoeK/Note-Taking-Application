@@ -16,7 +16,7 @@ function createWindow() {
     title: "Note Taking App"
   });
 
-  mainWindow.loadURL('http://localhost:3000');
+  mainWindow.loadURL(`file://${__dirname}/app/build/index.html`);
   mainWindow.setMenu(null);
 }
 

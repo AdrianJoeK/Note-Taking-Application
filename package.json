@@ -1,16 +1,27 @@
 {
   "name": "note-taking-application",
   "version": "1.0.0",
-  "description": "",
+  "description": "Note Taking App",
+  "author": "Adrian Kilgour",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd app && npm run build && cd .. && electron-builder",
     "start": "electron .",
-    "react-start": "cd app && npm start"
+    "react-start": "cd app && npm start",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Adrian Kilgour",
+  "license": "MIT",
+  "homepage": "https://github.com/AdrianJoeK/Note-Taking-Application",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AdrianJoeK/Note-Taking-Application.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AdrianJoeK/Note-Taking-Application/issues"
+  },
   "devDependencies": {
     "electron": "^30.0.1",
     "electron-builder": "^24.13.3"
@@ -20,5 +31,26 @@
     "react-quill": "^2.0.0",
     "sqlite3": "^5.1.7",
     "uuid": "^9.0.1"
+  },
+  "build": {
+    "appId": "com.AdrianKilgour.NoteTakingApp",
+    "productName": "Note Taking App",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "app/build/**/*",
+      "!**/*.js.map"
+    ],
+    "win": {
+      "icon": "build/icon.ico"
+    },
+    "mac": {
+      "icon": "build/icon.icns"
+    },
+    "linux": {
+      "icon": "build/icons"
+    }
   }
 }
